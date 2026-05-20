@@ -104,6 +104,7 @@ Migration of the entire network to 2077.cloud⟳
         1337nex.us<br>
         xco.re<br>
         versus.tv<br>1337.coffee<br>v7.software<br>mant.is<br>mantis.is<br>risit.as<br>jeuxvideo.com.mx<br>cyb.org.mx<br>cyb.org.ai<br>cyborgs.center<br>
+        kraken.email<br>
     </div>
 
     <div class="terminal-container">
@@ -169,7 +170,7 @@ Migration of the entire network to 2077.cloud⟳
         }
 
         function launchURL() {
-            // Extraction et nettoyage strict
+            
             let sub = document.getElementById('subdomain').value.replace(/\s+/g, '').toLowerCase();
             let dom = document.getElementById('domain').value.replace(/\s+/g, '').toLowerCase();
             let path = document.getElementById('path').value.trim();
@@ -179,7 +180,7 @@ Migration of the entire network to 2077.cloud⟳
             const approvedList = getApprovedDomains();
             const fullInput = sub ? (sub + "." + dom) : dom;
 
-            // Vérification de sécurité
+            
             const isBaseValid = approvedList.includes(dom);
             const isFullValid = approvedList.includes(fullInput);
 
@@ -193,7 +194,7 @@ Migration of the entire network to 2077.cloud⟳
             errorBox.style.borderColor = "#00ff00";
             errorBox.textContent = "ESTABLISHING ENCRYPTED LINK...";
 
-            // Construction de l'URL
+            
             let finalURL = "https://" + fullInput;
             if (path) {
                 finalURL += (path.startsWith('/') ? "" : "/") + path;
@@ -206,7 +207,7 @@ Migration of the entire network to 2077.cloud⟳
                 
                 if (userChoice) {
                     errorBox.textContent = "REDIRECTING...";
-                    // Forçage immédiat
+                    
                     window.location.href = finalURL;
                 } else {
                     runBtn.disabled = false;
